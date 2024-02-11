@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="mentalHealthSurveyForm.css"/>
+    <title>Mental Health Prediction</title>
+</head>
+<body>
+    <div class="container">
+        <form id="form" action="/">
+          <h1>Mental Health Prediction</h1>
+          <div class="input-control">
+            <label for="time-stamp">Time the survey was submitted?</label>
+            <input
+              id="time-stamp"
+              name="time-stamp"
+              type="datetime-local"
+              required
+            />
+            <div class="error"></div>
+          </div>
+          <div class="input-control">
+            <label for="age">Respondent age?</label>
+            <input id="age" name="age" type="number" />
+            <div class="error"></div>
+          </div>
+          <div class="input-control">
+            <label for="gender">Respondent gender?</label>
+            <select id="gender" name="gender">
+              <option value="select">Select</option>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+              <option value="non-binary">Non Binary</option>
+            </select>
+            <div class="error"></div>
+          </div>
+          <div class="input-control">
+            <label for="country">Respondent country?</label>
+            <select id="country" name="country">
+              <option value="select">Select</option>
+              <option value="australia">Australia</option>
+              <option value="austria">Austria</option>
+              <option value="belgium">Belgium</option>
+              <option value="Bosnia-and-herzegovina">
+                Bosnia and Herzegovina
+              </option>
+              <option value="brazil">Brazil</option>
+              <option value="bulgaria">Bulgaria</option>
+              <option value="canada">Canada</option>
+              <option value="china">China</option>
+              <option value="colombia">Colombia</option>
+              <option value="costa-rica">Costa Rica</option>
+              <option value="croatia">Croatia</option>
+              <option value="czech-republic">Czech Republic</option>
+              <option value="denmark">Denmark</option>
+              <option value="finland">Finland</option>
+              <option value="france">France</option>
+              <option value="georgia">Georgia</option>
+              <option value="germany">Germany</option>
+              <option value="greece">Greece</option>
+              <option value="hungary">Hungary</option>
+              <option value="india">India</option>
+              <option value="ireland">Ireland</option>
+              <option value="israel">Israel</option>
+              <option value="italy">Italy</option>
+              <option value="japan">Japan</option>
+              <option value="latvia">Latvia</option>
+              <option value="mexico">Mexico</option>
+              <option value="moldova">Moldova</option>
+              <option value="netherlands">Netherlands</option>
+              <option value="new-zealand">New Zealand</option>
+              <option value="nigeria">Nigeria</option>
+              <option value="norway">Norway</option>
+              <option value="philippines">Philippines</option>
+              <option value="poland">Poland</option>
+              <option value="portugal">Portugal</option>
+              <option value="romania">Romania</option>
+              <option value="russia">Russia</option>
+              <option value="singapore">Singapore</option>
+              <option value="slovenia">Slovenia</option>
+              <option value="south-africa">South Africa</option>
+              <option value="spain">Spain</option>
+              <option value="sweden">Sweden</option>
+              <option value="switzerland">Switzerland</option>
+              <option value="thailand">Thailand</option>
+              <option value="united-kingdom">United Kingdom</option>
+              <option value="united-states">United States</option>
+              <option value="uruguay">Uruguay</option>
+            </select>
+            <div class="error"></div>
+          </div>
+          <div class="input-control" id="state-dropdown">
+            <label for="state"
+              >If you live in the United States, which state or territory do you
+              live in?</label
+            >
+            <select id="state" name="state">
+              <option value="select">Select</option>
+              <option value="alabama">Alabama</option>
+              <option value="arizona">Arizona</option>
+              <option value="california">California</option>
+              <option value="colorado">Colorado</option>
+              <option value="connecticut">Connecticut</option>
+              <option value="district-of-columbia">District of Columbia</option>
+              <option value="florida">Florida</option>
+              <option value="georgia">Georgia</option>
+              <option value="iowa">Iowa</option>
+              <option value="idaho">Idaho</option>
+              <option value="illinois">Illinois</option>
+              <option value="kansas">Kansas</option>
+              <option value="kentucky">Kentucky</option>
+              <option value="louisiana">Louisiana</option>
+              <option value="massachusetts">Massachusetts</option>
+              <option value="maryland">Maryland</option>
+              <option value="maine">Maine</option>
+              <option value="michigan">Michigan</option>
+              <option value="minnesota">Minnesota</option>
+              <option value="missouri">Missouri</option>
+              <option value="mississippi">Mississippi</option>
+              <option value="north-carolina">North Carolina</option>
+              <option value="nebraska">Nebraska</option>
+              <option value="new-hampshire">New Hampshire</option>
+              <option value="new-jersey">New Jersey</option>
+              <option value="new-mexico">New Mexico</option>
+              <option value="neveda">Neveda</option>
+              <option value="ohio">Ohio</option>
+              <option value="oklahoma">Oklahoma</option>
+              <option value="oregon">Oregon</option>
+              <option value="pennsylvania">Pennsylvania</option>
+              <option value="rhode-island">Rhode Island</option>
+              <option value="south-carolina">South Carolina</option>
+              <option value="south-dakota">South Dakota</option>
+              <option value="tennessee">Tennessee</option>
+              <option value="texas">Texas</option>
+              <option value="utah">Utah</option>
+              <option value="virginia">Virginia</option>
+              <option value="vermont">Vermont</option>
+              <option value="washington">Washington</option>
+              <option value="wisconsin">Wisconsin</option>
+              <option value="west-virginia">West Virginia</option>
+              <option value="wyoming">Wyoming</option>
+            </select>
+            <div class="error"></div>
+          </div>
+          <div class="input-control">
+            <label for="self-employed">Are you self-employed?</label>
+            <select id="self-employed" name="self-employed">
+              <option value="select">Select</option>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select>
+            <div class="error"></div>
+          </div>
+  
+          <div class="input-control">
+            <label for="family-history"
+              >Do you have a family history of mental illness?</label
+            >
+            <select id="family-history" name="family-history">
+              <option value="select">Select</option>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select>
+            <div class="error"></div>
+          </div>
+          <div class="input-control">
+            <label for="work-interfere"
+              >If you have a mental health condition, do you feel that it
+              interferes with your work?</label
+            >
+            <select id="work-interfere" name="work-interfere">
+              <option value="select">Select</option>
+              <option value="never">Never</option>
+              <option value="rarely">Rarely</option>
+              <option value="sometimes">Sometimes</option>
+              <option value="often">Often</option>
+            </select>
+            <div class="error"></div>
+          </div>
+          <div class="input-control">
+            <label for="no-of-employees"
+              >How many employees does your company or organization have?</label
+            >
+            <select id="no-of-employees" name="no-of-employees">
+              <option value="select">Select</option>
+              <option value="one-to-five">1-5</option>
+              <option value="six-to-twenty-five">6-25</option>
+              <option value="twenty-six-to-hundred">26-100</option>
+              <option value="hundred-to-five-hundred">100-500</option>
+              <option value="five-hundred-to-thousand">500-1000</option>
+              <option value="more-than-thousand">More than 1000</option>
+            </select>
+            <div class="error"></div>
+          </div>
+          <div class="input-control">
+            <label for="remote-work"
+              >Do you work remotely (outside of an office) at least 50% of the
+              time?</label
+            >
+            <select id="remote-work" name="remote-work">
+              <option value="select">Select</option>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select>
+            <div class="error"></div>
+          </div>
+          <div class="input-control">
+            <label for="tech-company"
+              >Is your employer primarily a tech company/organization?</label
+            >
+            <select id="tech-company" name="tech-company">
+              <option value="select">Select</option>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select>
+            <div class="error"></div>
+          </div>
+          <div class="input-control">
+            <label for="benefits"
+              >Does your employer provide mental health benefits?</label
+            >
+            <select id="benefits" name="benefits">
+              <option value="select">Select</option>
+              <option value="dont-know">Don't know</option>
+              <option value="no">No</option>
+              <option value="yes">Yes</option>
+            </select>
+            <div class="error"></div>
+          </div>
+          <div class="input-control">
+            <label for="care-options"
+              >Do you know the options for mental health care your employer
+              provides?</label
+            >
+            <select id="care-options" name="care-options">
+              <option value="select">Select</option>
+              <option value="no">No</option>
+              <option value="not-sure">Not sure</option>
+              <option value="yes">Yes</option>
+            </select>
+            <div class="error"></div>
+          </div>
+          <div class="input-control">
+            <label for="wellness-program"
+              >Has your employer ever discussed mental health as part of an
+              employee wellness program?</label
+            >
+            <select id="wellness-program" name="wellness-program">
+              <option value="select">Select</option>
+              <option value="dont-know">Don't know</option>
+              <option value="no">No</option>
+              <option value="yes">Yes</option>
+            </select>
+            <div class="error"></div>
+          </div>
+          <div class="input-control">
+            <label for="seek-help"
+              >Does your employer provide resources to learn more about mental
+              health issues and how to seek help?</label
+            >
+            <select id="seek-help" name="seek-help">
+              <option value="select">Select</option>
+              <option value="dont-know">Don't know</option>
+              <option value="no">No</option>
+              <option value="yes">Yes</option>
+            </select>
+            <div class="error"></div>
+          </div>
+          <div class="input-control">
+            <label for="anonymity"
+              >Is your anonymity protected if you choose to take advantage of
+              mental health or substance abuse treatment?</label
+            >
+            <select id="anonymity" name="anonymity">
+              <option value="select">Select</option>
+              <option value="dont-know">Don't know</option>
+              <option value="no">No</option>
+              <option value="yes">Yes</option>
+            </select>
+            <div class="error"></div>
+          </div>
+          <div class="input-control">
+            <label for="leave"
+              >How easy is it for you to take medical leave for a mental health
+              condition?</label
+            >
+            <select id="leave" name="leave">
+              <option value="select">Select</option>
+              <option value="dont-know">Don't know</option>
+              <option value="somewhat-difficult">Somewhat difficult</option>
+              <option value="somewhat-easy">Somewhat easy</option>
+              <option value="very-difficult">Very difficult</option>
+              <option value="very-easy">Very easy</option>
+            </select>
+            <div class="error"></div>
+          </div>
+          <div class="input-control">
+            <label for="mental-health-consequence"
+              >Do you think that discussing a mental health issue with your
+              employer would have negative consequences?</label
+            >
+            <select
+              id="mental-health-consequence"
+              name="mental-health-consequence"
+            >
+              <option value="select">Select</option>
+              <option value="maybe">Maybe</option>
+              <option value="no">No</option>
+              <option value="yes">Yes</option>
+            </select>
+            <div class="error"></div>
+          </div>
+          <div class="input-control">
+            <label for="phys-health-consequence"
+              >Do you think that discussing a physical health issue with your
+              employer would have negative consequences?</label
+            >
+            <select id="phys-health-consequence" name="phys-health-consequence">
+              <option value="select">Select</option>
+              <option value="maybe">Maybe</option>
+              <option value="no">No</option>
+              <option value="yes">Yes</option>
+            </select>
+            <div class="error"></div>
+          </div>
+          <div class="input-control">
+            <label for="coworkers"
+              >Would you be willing to discuss a mental health issue with your
+              coworkers?</label
+            >
+            <select id="coworkers" name="coworkers">
+              <option value="select">Select</option>
+              <option value="no">No</option>
+              <option value="some-of-them">Some of them</option>
+              <option value="yes">Yes</option>
+            </select>
+            <div class="error"></div>
+          </div>
+          <div class="input-control">
+            <label for="supervisor"
+              >Would you be willing to discuss a mental health issue with your
+              direct supervisor(s)?</label
+            >
+            <select id="supervisor" name="supervisor">
+              <option value="select">Select</option>
+              <option value="no">No</option>
+              <option value="some-of-them">Some of them</option>
+              <option value="yes">Yes</option>
+            </select>
+            <div class="error"></div>
+          </div>
+          <div class="input-control">
+            <label for="mental-health-interview"
+              >Would you bring up a mental health issue with a potential employer
+              in an interview?</label
+            >
+            <select id="mental-health-interview" name="mental-health-interview">
+              <option value="select">Select</option>
+              <option value="maybe">Maybe</option>
+              <option value="no">No</option>
+              <option value="yes">Yes</option>
+            </select>
+            <div class="error"></div>
+          </div>
+          <div class="input-control">
+            <label for="phys-health-interview"
+              >Would you bring up a physical health issue with a potential
+              employer in an interview?</label
+            >
+            <select id="phys-health-interview" name="phys-health-interview">
+              <option value="select">Select</option>
+              <option value="maybe">Maybe</option>
+              <option value="no">No</option>
+              <option value="yes">Yes</option>
+            </select>
+            <div class="error"></div>
+          </div>
+          <div class="input-control">
+            <label for="mental-vs-physical"
+              >Do you feel that your employer takes mental health as seriously as
+              physical health?</label
+            >
+            <select id="mental-vs-physical" name="mental-vs-physical">
+              <option value="select">Select</option>
+              <option value="dont-know">Don't know</option>
+              <option value="no">No</option>
+              <option value="yes">Yes</option>
+            </select>
+            <div class="error"></div>
+          </div>
+          <div class="input-control">
+            <label for="obs-consequence"
+              >Have you heard of or observed negative consequences for coworkers
+              with mental health conditions?</label
+            >
+            <select id="obs-consequence" name="obs-consequence">
+              <option value="select">Select</option>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select>
+            <div class="error"></div>
+          </div>
+          <button type="submit">Predict</button>
+        </form>
+      </div>
+      <script src="mentalHealthSurveyForm.js"></script>
+</body>
+</html>
